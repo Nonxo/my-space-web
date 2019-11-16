@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import {i18n} from "i18next";
 import {useTranslation} from "react-i18next";
 
