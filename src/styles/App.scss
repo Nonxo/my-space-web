@@ -1,7 +1,17 @@
+//base
 @import "base/base";
 @import "base/color-variables";
 @import "base/typography";
+//base
 
+//components
+@import "components/buttons";
+//components
+
+//layout
 @import "layout/forms";
+//layout
 
-@import "pages/login";
+//pages
+@import "pages/sign-up";
+//pages

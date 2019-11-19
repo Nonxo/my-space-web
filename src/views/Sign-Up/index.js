@@ -3,6 +3,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import logo from '../../assets/img/logo.svg'
+import googleLogo from '../../assets/img/google.svg'
+import {TextField} from "@material-ui/core";
+import Checkbox from "@material-ui/core/Checkbox";
 
 class Index extends Component {
     render() {
@@ -20,8 +23,120 @@ class Index extends Component {
                         </div>
                     </Container>
                 </Col>
-                <Col md={8}>
+                <Col md={8} className="py-4">
+                    <Container>
+                        <p className="text-secondary text-right">Already have an account? <span
+                            className="green__text cursor font-weight-medium">Sign In</span></p>
 
+                        <div className="sign-up__div mx-auto mt-5">
+                            <h4 className="sign-up__h4 font-weight-semi-bold pb-4">Create your verified account</h4>
+                            <button className="btn btn-google px-3"><img className="float-left" src={googleLogo}
+                                                                         alt="Google Logo"/> <span
+                                className="font-weight-semi-bold">Sign up with Google</span></button>
+
+                            <form>
+                                <Row>
+                                    <Col md={6}>
+                                        <TextField
+                                            id="firstName"
+                                            label="First Name"
+                                            margin="normal"
+                                            variant="outlined"
+                                            className="w-100"
+                                        />
+                                    </Col>
+                                    <Col md={6}>
+                                        <TextField
+                                            id="lastName"
+                                            label="Last Name"
+                                            margin="normal"
+                                            variant="outlined"
+                                            className="w-100"
+                                        />
+                                    </Col>
+
+                                    <Col md={12}>
+                                        <TextField
+                                            id="email"
+                                            label="Email Address"
+                                            margin="normal"
+                                            variant="outlined"
+                                            className="w-100"
+                                        />
+                                    </Col>
+
+                                    <Col md={3}>
+                                    </Col>
+
+                                    <Col md={9}>
+                                        <TextField
+                                            id="phoneNumber"
+                                            label="Phone Number"
+                                            margin="normal"
+                                            variant="outlined"
+                                            className="w-100"
+                                        />
+                                    </Col>
+
+                                    <Col md={12}>
+                                        <TextField
+                                            id="companyName"
+                                            label="Company Name"
+                                            margin="normal"
+                                            variant="outlined"
+                                            className="w-100"
+                                        />
+                                    </Col>
+
+                                    <Col md={12}>
+                                        <TextField
+                                            id="password"
+                                            label="Password"
+                                            margin="normal"
+                                            type="password"
+                                            variant="outlined"
+                                            className="w-100"
+                                        />
+                                    </Col>
+
+                                    <div className="d-inline-flex my-3">
+                                        <Checkbox/>
+                                        <p className="my-auto" style={{fontSize: '15px'}}>I have read and agreed to
+                                            the <span className="green__text">terms of service</span> and <span
+                                                className="green__text">conditions</span> of
+                                            Verified.ng</p>
+                                    </div>
+                                    <Col sm={12}>
+                                        <button className="btn btn-primary w-100">Continue</button>
+                                    </Col>
+                                </Row>
+                            </form>
+                        </div>
+
+                        <div className="sign-up__div mx-auto mt-5">
+                            <Row>
+                                <Col md={6}>
+                                    <p className="text-secondary">All rights reserved © 2019 Verified</p>
+                                </Col>
+
+                                <Col md={6}>
+                                    <Row>
+                                        <Col md={2}></Col>
+                                        <Col md={5}>
+                                            <div className="text-secondary d-inline-flex">
+                                                <p>Privacy</p>
+                                                <p className="px-2">|</p>
+                                                <p>Terms</p>
+                                            </div>
+                                        </Col>
+                                        <Col md={5}>
+                                            <p className="text-secondary">English</p>
+                                        </Col>
+                                    </Row>
+                                </Col>
+                            </Row>
+                        </div>
+                    </Container>
                 </Col>
             </Row>
         )
