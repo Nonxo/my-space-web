@@ -11,7 +11,7 @@ class Index extends Component {
     render() {
         return (
             <Row className="mx-auto">
-                <Col md={4} className="bg-green px-5">
+                <Col md={4} className="bg-green px-5 d-md-block d-none">
                     <Container>
                         <div className="pt-4">
                             <img src={logo} alt="Logo"/>
@@ -25,7 +25,7 @@ class Index extends Component {
                 </Col>
                 <Col md={8} className="py-4">
                     <Container>
-                        <p className="text-secondary text-right">Already have an account? <span
+                        <p className="text-secondary text-md-right text-center">Already have an account? <span
                             className="green__text cursor font-weight-medium">Sign In</span></p>
 
                         <div className="sign-up__div mx-auto mt-5">
@@ -97,6 +97,15 @@ class Index extends Component {
                                             variant="outlined"
                                             className="w-100"
                                         />
+                                        <div className="d-inline-flex">
+                                            <div id="first__level" className="password-strength__div mr-3"></div>
+                                            <div id="second__level" className="password-strength__div mr-3"></div>
+                                            <div id="third__level" className="password-strength__div mr-3"></div>
+                                            <div id="fourth__level" className="password-strength__div mr-3"></div>
+                                            <div id="fifth__level" className="password-strength__div mr-3"></div>
+                                            <div id="sixth__level" className="password-strength__div"></div>
+                                        </div>
+                                        <p className="text-danger small font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>Your password must contain an alphanumeric and a number and at least 6 characters</p>
                                     </Col>
 
                                     <div className="d-inline-flex my-3">
@@ -130,7 +139,7 @@ class Index extends Component {
                                             </div>
                                         </Col>
                                         <Col md={5}>
-                                            <p className="text-secondary">English</p>
+                                            <p className="text-secondary text-md-right">English</p>
                                         </Col>
                                     </Row>
                                 </Col>

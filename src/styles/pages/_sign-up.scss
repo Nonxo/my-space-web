@@ -27,3 +27,27 @@ h4 {
 .sign-up__div {
   max-width: 526px;
 }
+
+.password-strength__div {
+  width: 69px;
+  height: 3px;
+  background: #EBF3EA;
+  border-radius: 2px;
+}
+
+.password-strength__strength {
+  background: $primary-color;
+}
+
+.password-strength__weak {
+  background: $danger-color;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+
+  border-bottom: 5px solid $danger-color;
+}

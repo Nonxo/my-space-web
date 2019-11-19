@@ -3,7 +3,7 @@ import './styles/App.scss';
 import {i18n} from "i18next";
 import {useTranslation} from "react-i18next";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Index from "./views/Sign-Up/index";
+import Index from "./views/Sign-Up";
 
 const App: React.FC = () => {
 

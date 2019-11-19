@@ -1,4 +1,13 @@
 {
-  "Thanks" : "Thanks",
-  "Why" : "For setting up react"
+  "app": {
+    "signUp": {
+      "signUp-caption": "Start verifying identities with Verified.ng",
+      "signUp-form-header": "Create your verified account",
+      "signUpWithGoogle": "Sign up with Google",
+      "termsCheckbox": "I have read and agreed to the terms of service and conditions of Verified.ng",
+      "allRight": "All rights reserved © 2019 Verified",
+      "privacy": "Privacy",
+      "terms": "Terms"
+    }
+  }
 }
