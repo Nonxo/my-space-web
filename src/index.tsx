@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './i18next';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(<Suspense fallback={(<div>Loading ~~~</div>)}><App /></Suspense>, document.getElementById('root'));
 
