@@ -14,23 +14,22 @@ class Index extends Component {
                 <Col md={4} className="bg-green px-5 d-md-block d-none">
                     <Container>
                         <div className="pt-4">
-                            <img src={logo} alt="Logo"/>
+                            <img id="verifyLogo" src={logo} alt="Logo"/>
 
                             <div className="sign-up--header__padding-top">
-                                <h4 className="font-weight-bold">Start verifying identities</h4>
-                                <h4 className="font-weight-bold">with Verified.ng</h4>
+                                <h4 id="sign-up-header" className="font-weight-bold sign--up__header">Start verifying identities with Verified.ng</h4>
                             </div>
                         </div>
                     </Container>
                 </Col>
                 <Col md={8} className="py-4">
                     <Container>
-                        <p className="text-secondary text-md-right text-center">Already have an account? <span
+                        <p className="text-secondary text-md-right text-center">Already have an account? <span id="signInText"
                             className="green__text cursor font-weight-medium">Sign In</span></p>
 
                         <div className="sign-up__div mx-auto mt-5">
-                            <h4 className="sign-up__h4 font-weight-semi-bold pb-4">Create your verified account</h4>
-                            <button className="btn btn-google px-3"><img className="float-left" src={googleLogo}
+                            <h4 id="signUp-text" className="sign-up__h4 font-weight-semi-bold pb-4">Create your verified account</h4>
+                            <button id="signUp-with-google" className="btn btn-google px-3"><img className="float-left" src={googleLogo}
                                                                          alt="Google Logo"/> <span
                                 className="font-weight-semi-bold">Sign up with Google</span></button>
 
@@ -44,6 +43,7 @@ class Index extends Component {
                                             variant="outlined"
                                             className="w-100"
                                         />
+                                        <p id="firstName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The First Name Field Must Be At Least 3 Characters</p>
                                     </Col>
                                     <Col md={6}>
                                         <TextField
@@ -53,6 +53,7 @@ class Index extends Component {
                                             variant="outlined"
                                             className="w-100"
                                         />
+                                        <p id="LastName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The Last Name Must Be At Least 3 Characters</p>
                                     </Col>
 
                                     <Col md={12}>
@@ -63,9 +64,20 @@ class Index extends Component {
                                             variant="outlined"
                                             className="w-100"
                                         />
+
+                                        <p id="email-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The Email Field Must Contain An "@" Symbol</p>
                                     </Col>
 
-                                    <Col md={3}>
+                                    <Col md={3} className="pr-0">
+                                        <div className="flag-div">
+                                            <div className="flag-div__Selected d-inline-flex w-100">
+                                                <i className="flag al mr-2"></i> <p>+234</p>
+                                            </div>
+
+                                            <div className="flag-div__dropdown d-none">
+
+                                            </div>
+                                        </div>
                                     </Col>
 
                                     <Col md={9}>
@@ -76,6 +88,8 @@ class Index extends Component {
                                             variant="outlined"
                                             className="w-100"
                                         />
+
+                                        <p id="phone-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>Invalid Phone Number Entered</p>
                                     </Col>
 
                                     <Col md={12}>
@@ -86,6 +100,8 @@ class Index extends Component {
                                             variant="outlined"
                                             className="w-100"
                                         />
+
+                                        <p id="companyName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The Company Name Field Must Be At Lease 3 Characters</p>
                                     </Col>
 
                                     <Col md={12}>
@@ -105,18 +121,18 @@ class Index extends Component {
                                             <div id="fifth__level" className="password-strength__div mr-3"></div>
                                             <div id="sixth__level" className="password-strength__div"></div>
                                         </div>
-                                        <p className="text-danger small font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>Your password must contain an alphanumeric and a number and at least 6 characters</p>
+                                        <p id="password-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>Your password must contain an alphanumeric and a number and at least 6 characters</p>
                                     </Col>
 
                                     <div className="d-inline-flex my-3">
                                         <Checkbox/>
-                                        <p className="my-auto" style={{fontSize: '15px'}}>I have read and agreed to
+                                        <p id="termsAndCondition-check" className="my-auto" style={{fontSize: '15px'}}>I have read and agreed to
                                             the <span className="green__text">terms of service</span> and <span
                                                 className="green__text">conditions</span> of
                                             Verified.ng</p>
                                     </div>
                                     <Col sm={12}>
-                                        <button className="btn btn-primary w-100">Continue</button>
+                                        <button id="signUp-button" className="btn btn-primary w-100">Continue</button>
                                     </Col>
                                 </Row>
                             </form>
@@ -133,13 +149,13 @@ class Index extends Component {
                                         <Col md={2}></Col>
                                         <Col md={5}>
                                             <div className="text-secondary d-inline-flex">
-                                                <p>Privacy</p>
+                                                <p id="privacy">Privacy</p>
                                                 <p className="px-2">|</p>
-                                                <p>Terms</p>
+                                                <p id="terms">Terms</p>
                                             </div>
                                         </Col>
                                         <Col md={5}>
-                                            <p className="text-secondary text-md-right">English</p>
+                                            <p id="langSelector" className="text-secondary text-md-right">English</p>
                                         </Col>
                                     </Row>
                                 </Col>
