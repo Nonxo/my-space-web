@@ -1,6 +1,5 @@
 .bg-green {
   background: $light-green;
-  height: 100vh;
 }
 
 h4 {
@@ -21,11 +20,11 @@ h4 {
 
 .btn-google {
   width: 100%;
-  height: 56px;
+  height: 40px;
 }
 
 .btn-primary {
-  height: 56px;
+  height: 40px;
 }
 
 .sign-up__div {
@@ -61,12 +60,12 @@ h4 {
 }
 
 .flag-div__Selected {
-  height: 56px;
+  height: 40px;
   border: 1px solid $border-color;
   border-radius: 5px;
   margin-top: 16px;
   margin-bottom: 8px;
-  padding: 16.5px 14px;
+  padding: 7.5px 14px;
 }
 
 .flag-div__dropdown {
@@ -76,7 +75,7 @@ h4 {
   overflow-y: auto;
   position: absolute;
   z-index: 999;
-  box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
 }
 
 .flag-div {

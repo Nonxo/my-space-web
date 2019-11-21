@@ -18,3 +18,47 @@ body {
   background-color: rgba(72, 185, 113, 0.13) !important;
 }
 
+.MuiOutlinedInput-input {
+  padding: 0.5px 14px !important;
+}
+
+.MuiInputLabel-formControl {
+  top: -6px !important;
+  left: 0;
+  position: absolute;
+  transform: translate(0, 24px) scale(1);
+}
+
+.MuiInputBase-input {
+  height: 40px !important;
+}
+
+.h100Vh {
+  height: 100vh;
+}
+
+.h-line-between-words {
+  overflow: hidden;
+  text-align: center;
+}
+
+.h-line-between-words:before,
+.h-line-between-words:after {
+  background-color: #DBE3EE;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.h-line-between-words:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.h-line-between-words:after {
+  left: 0.5rem;
+  margin-right: -50%;
+}

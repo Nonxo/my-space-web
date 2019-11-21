@@ -10,7 +10,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 class Index extends Component {
     render() {
         return (
-            <Row className="mx-auto">
+            <Row className="mx-auto h100Vh">
                 <Col md={4} className="bg-green px-5 d-md-block d-none">
                     <Container>
                         <div className="pt-4">
@@ -29,9 +29,11 @@ class Index extends Component {
 
                         <div className="sign-up__div mx-auto mt-5">
                             <h4 id="signUp-text" className="sign-up__h4 font-weight-semi-bold pb-4">Create your verified account</h4>
-                            <button id="signUp-with-google" className="btn btn-google px-3"><img className="float-left" src={googleLogo}
+                            <button id="signUp-with-google" className="btn btn-google px-3"><img style={{maxWidth: '22px'}} className="float-left" src={googleLogo}
                                                                          alt="Google Logo"/> <span
                                 className="font-weight-semi-bold">Sign up with Google</span></button>
+
+                            <h6 style={{color: '#859BBCF5'}} className="h-line-between-words mt-4 mb-3">OR</h6>
 
                             <form>
                                 <Row>
@@ -42,6 +44,7 @@ class Index extends Component {
                                             margin="normal"
                                             variant="outlined"
                                             className="w-100"
+                                            name="firstName"
                                         />
                                         <p id="firstName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The First Name Field Must Be At Least 3 Characters</p>
                                     </Col>
@@ -52,6 +55,7 @@ class Index extends Component {
                                             margin="normal"
                                             variant="outlined"
                                             className="w-100"
+                                            name="lastName"
                                         />
                                         <p id="LastName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The Last Name Must Be At Least 3 Characters</p>
                                     </Col>
@@ -63,6 +67,8 @@ class Index extends Component {
                                             margin="normal"
                                             variant="outlined"
                                             className="w-100"
+                                            name="email"
+
                                         />
 
                                         <p id="email-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The Email Field Must Contain An "@" Symbol</p>
@@ -87,6 +93,7 @@ class Index extends Component {
                                             margin="normal"
                                             variant="outlined"
                                             className="w-100"
+                                            name="phoneNumber"
                                         />
 
                                         <p id="phone-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>Invalid Phone Number Entered</p>
@@ -99,6 +106,7 @@ class Index extends Component {
                                             margin="normal"
                                             variant="outlined"
                                             className="w-100"
+                                            name="companyName"
                                         />
 
                                         <p id="companyName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The Company Name Field Must Be At Lease 3 Characters</p>
@@ -112,6 +120,7 @@ class Index extends Component {
                                             type="password"
                                             variant="outlined"
                                             className="w-100"
+                                            name="password"
                                         />
                                         <div className="d-inline-flex">
                                             <div id="first__level" className="password-strength__div mr-3"></div>
