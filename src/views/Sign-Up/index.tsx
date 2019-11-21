@@ -6,8 +6,53 @@ import logo from '../../assets/img/logo.svg'
 import googleLogo from '../../assets/img/google.svg'
 import {TextField} from "@material-ui/core";
 import Checkbox from "@material-ui/core/Checkbox";
+import ValidationUtil from "../../utilities/validation-util";
 
 class Index extends Component {
+
+    state = {
+        text: '',
+        companyName: '',
+        email: '',
+        firstName: '',
+        lastName: '',
+        password: '',
+        phoneNumber: '',
+        firstNameError: false,
+        lastNameError: false,
+        emailError: false,
+        phoneNumberError: false,
+        companyNameError: false
+    };
+
+    onSubmit = (e: any) => {
+        e.preventDefault();
+    };
+
+    onChange = (e: any) => {
+        const { name, value} = e.target;
+        this.setState({[name]: value});
+        if(name === 'firstName') {
+            this.setState({ firstNameError: ValidationUtil.validateName(value)});
+        } else if(name === 'lastName') {
+            this.setState({lastNameError: ValidationUtil.validateName(value)});
+        } else if(name === 'email') {
+            this.setState({emailError: ValidationUtil.validateEmail(value)});
+        } else if (name === 'phoneNumber') {
+            this.setState({phoneNumberError: ValidationUtil.validatePhone(value)});
+        } else if (name === 'companyName') {
+            this.setState({companyNameError: ValidationUtil.validateCompanyName(value)})
+        }
+    };
+
+    componentDidMount(): void {
+        this.setState({firstNameError: true});
+        this.setState({lastNameError: true});
+        this.setState({emailError: true});
+        this.setState({phoneNumberError: true});
+        this.setState({companyNameError: true})
+    }
+
     render() {
         return (
             <Row className="mx-auto h100Vh">
@@ -35,7 +80,7 @@ class Index extends Component {
 
                             <h6 style={{color: '#859BBCF5'}} className="h-line-between-words mt-4 mb-3">OR</h6>
 
-                            <form>
+                            <form onSubmit={this.onSubmit}>
                                 <Row>
                                     <Col md={6}>
                                         <TextField
@@ -45,8 +90,12 @@ class Index extends Component {
                                             variant="outlined"
                                             className="w-100"
                                             name="firstName"
+                                            onChange={e => (
+                                                this.onChange(e)
+                                            )}
                                         />
-                                        <p id="firstName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The First Name Field Must Be At Least 3 Characters</p>
+                                        {!this.state.firstNameError && <p id="firstName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The First Name Field Must Be At Least 3 Characters</p>}
+
                                     </Col>
                                     <Col md={6}>
                                         <TextField
@@ -56,8 +105,12 @@ class Index extends Component {
                                             variant="outlined"
                                             className="w-100"
                                             name="lastName"
+                                            onChange={e => (
+                                                this.onChange(e)
+                                            )}
                                         />
-                                        <p id="LastName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The Last Name Must Be At Least 3 Characters</p>
+                                        {!this.state.lastNameError && <p id="LastName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The Last Name Must Be At Least 3 Characters</p>}
+
                                     </Col>
 
                                     <Col md={12}>
@@ -68,10 +121,13 @@ class Index extends Component {
                                             variant="outlined"
                                             className="w-100"
                                             name="email"
+                                            onChange={e => (
+                                                this.onChange(e)
+                                            )}
 
                                         />
+                                        {!this.state.emailError && <p id="email-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The Email Field Must Contain An "@" Symbol</p>}
 
-                                        <p id="email-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The Email Field Must Contain An "@" Symbol</p>
                                     </Col>
 
                                     <Col md={3} className="pr-0">
@@ -94,9 +150,12 @@ class Index extends Component {
                                             variant="outlined"
                                             className="w-100"
                                             name="phoneNumber"
+                                            onChange={e => (
+                                                this.onChange(e)
+                                            )}
                                         />
+                                        { !this.state.phoneNumberError && <p id="phone-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>Invalid Phone Number Entered</p> }
 
-                                        <p id="phone-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>Invalid Phone Number Entered</p>
                                     </Col>
 
                                     <Col md={12}>
@@ -107,9 +166,12 @@ class Index extends Component {
                                             variant="outlined"
                                             className="w-100"
                                             name="companyName"
+                                            onChange={e => (
+                                                this.onChange(e)
+                                            )}
                                         />
+                                        {!this.state.companyNameError && <p id="companyName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The Company Name Field Must Be At Lease 3 Characters</p>}
 
-                                        <p id="companyName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The Company Name Field Must Be At Lease 3 Characters</p>
                                     </Col>
 
                                     <Col md={12}>
@@ -121,6 +183,9 @@ class Index extends Component {
                                             variant="outlined"
                                             className="w-100"
                                             name="password"
+                                            onChange={e => (
+                                                this.onChange(e)
+                                            )}
                                         />
                                         <div className="d-inline-flex">
                                             <div id="first__level" className="password-strength__div mr-3"></div>
@@ -130,7 +195,9 @@ class Index extends Component {
                                             <div id="fifth__level" className="password-strength__div mr-3"></div>
                                             <div id="sixth__level" className="password-strength__div"></div>
                                         </div>
-                                        <p id="password-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>Your password must contain an alphanumeric and a number and at least 6 characters</p>
+
+                                        {(this.state.password.length > 0 && this.state.password.length < 8) && <p id="password-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>Your password must contain an alphanumeric and a number and at least 6 characters</p>}
+
                                     </Col>
 
                                     <div className="d-inline-flex my-3">
