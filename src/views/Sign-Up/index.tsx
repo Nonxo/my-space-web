@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import {Row, Col} from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import logo from '../../assets/img/logo.svg'
 import googleLogo from '../../assets/img/google.svg'
@@ -18,11 +17,11 @@ class Index extends Component {
         lastName: '',
         password: '',
         phoneNumber: '',
-        firstNameError: false,
-        lastNameError: false,
+        firstNameError: null,
+        lastNameError: null,
         emailError: false,
-        phoneNumberError: false,
-        companyNameError: false
+        phoneNumberError: null,
+        companyNameError: null
     };
 
     onSubmit = (e: any) => {
@@ -46,11 +45,11 @@ class Index extends Component {
     };
 
     componentDidMount(): void {
-        this.setState({firstNameError: true});
-        this.setState({lastNameError: true});
+        this.setState({firstNameError: ''});
+        this.setState({lastNameError: ''});
         this.setState({emailError: true});
-        this.setState({phoneNumberError: true});
-        this.setState({companyNameError: true})
+        this.setState({phoneNumberError: ''});
+        this.setState({companyNameError: ''})
     }
 
     render() {
@@ -94,7 +93,7 @@ class Index extends Component {
                                                 this.onChange(e)
                                             )}
                                         />
-                                        {!this.state.firstNameError && <p id="firstName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The First Name Field Must Be At Least 3 Characters</p>}
+                                        {this.state.firstNameError !== '' && <p id="firstName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>{this.state.firstNameError}</p>}
 
                                     </Col>
                                     <Col md={6}>
@@ -109,8 +108,7 @@ class Index extends Component {
                                                 this.onChange(e)
                                             )}
                                         />
-                                        {!this.state.lastNameError && <p id="LastName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The Last Name Must Be At Least 3 Characters</p>}
-
+                                        {this.state.lastNameError !== '' && <p id="firstName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>{this.state.lastNameError}</p>}
                                     </Col>
 
                                     <Col md={12}>
@@ -126,7 +124,7 @@ class Index extends Component {
                                             )}
 
                                         />
-                                        {!this.state.emailError && <p id="email-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The Email Field Must Contain An "@" Symbol</p>}
+                                        {!this.state.emailError && <p id="email-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>Please enter a valid email address format</p>}
 
                                     </Col>
 
@@ -154,7 +152,7 @@ class Index extends Component {
                                                 this.onChange(e)
                                             )}
                                         />
-                                        { !this.state.phoneNumberError && <p id="phone-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>Invalid Phone Number Entered</p> }
+                                        {this.state.phoneNumberError !== '' && <p id="firstName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>{this.state.phoneNumberError}</p>}
 
                                     </Col>
 
@@ -170,7 +168,7 @@ class Index extends Component {
                                                 this.onChange(e)
                                             )}
                                         />
-                                        {!this.state.companyNameError && <p id="companyName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>The Company Name Field Must Be At Lease 3 Characters</p>}
+                                        {this.state.companyNameError !== '' && <p id="firstName-error" className="text-danger smaller-text font-weight-bold d-flex"><span className="arrow-up my-auto mr-1"></span>{this.state.companyNameError}</p>}
 
                                     </Col>
 
