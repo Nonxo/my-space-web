@@ -44,13 +44,22 @@ h4 {
   right: 14px;
 }
 
-.password-strength__strength {
-  background: $primary-color;
+.password-strength__four {
+  background: $green-color;
 }
 
-.password-strength__weak {
+.password-strength__three {
+  background: $mid-green;
+}
+
+.password-strength__two {
+  background: $yellow-color;
+}
+
+.password-strength__one {
   background: $danger-color;
 }
+
 
 .arrow-up {
   width: 0;

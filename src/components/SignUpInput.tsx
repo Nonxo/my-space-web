@@ -67,6 +67,15 @@ class SignUpInput extends Component<any, any> {
     }
 
     render() {
+
+        const colors:any = {
+            20:'password-strength__one',
+            40:'password-strength__two',
+            60:'password-strength__two',
+            80: 'password-strength__three',
+            100: 'password-strength__four'
+        };
+
         return (
             <Fragment>
                 <form onSubmit={this.onSubmit}>
@@ -98,6 +107,7 @@ class SignUpInput extends Component<any, any> {
                                 variant="outlined"
                                 className="w-100"
                                 name="lastName"
+                                required
                                 onChange={e => (
                                     this.onChange(e)
                                 )}
@@ -116,6 +126,7 @@ class SignUpInput extends Component<any, any> {
                                 variant="outlined"
                                 className="w-100"
                                 name="email"
+                                required
                                 onChange={e => (
                                     this.onChange(e)
                                 )}
@@ -148,6 +159,7 @@ class SignUpInput extends Component<any, any> {
                                 variant="outlined"
                                 className="w-100"
                                 name="phoneNumber"
+                                required
                                 onChange={e => (
                                     this.onChange(e)
                                 )}
@@ -167,6 +179,7 @@ class SignUpInput extends Component<any, any> {
                                 variant="outlined"
                                 className="w-100"
                                 name="companyName"
+                                required
                                 onChange={e => (
                                     this.onChange(e)
                                 )}
@@ -188,26 +201,21 @@ class SignUpInput extends Component<any, any> {
                                     variant="outlined"
                                     className="w-100"
                                     name="password"
+                                    required
                                     onChange={e => (
                                         this.onChange(e)
                                     )}
                                 />
                                 <i onClick={this.togglePassword}
-                                   className={`passwordIcon fa fa-${this.state.passwordVisibility ? 'eye' : 'eye-slash'}`}></i>
+                                   className={`cursor passwordIcon fa fa-${this.state.passwordVisibility ? 'eye' : 'eye-slash'}`}></i>
                             </div>
 
-                            {this.state.passwordCount > 0 &&
-                            <div style={{display: 'inline-flex'}} className="d-inline-flex">
-                                <div id="first__level"
-                                     className={`password-strength__div mr-3 ${this.state.passwordCount > 20 ? 'password-strength__strength' : 'password-strength__weak'}`}></div>
-                                <div id="second__level"
-                                     className={`password-strength__div mr-3 ${this.state.passwordCount >= 40 ? 'password-strength__strength' : ''}`}></div>
-                                <div id="third__level"
-                                     className={`password-strength__div mr-3 ${this.state.passwordCount >= 60 ? 'password-strength__strength' : ''}`}></div>
-                                <div id="fourth__level"
-                                     className={`password-strength__div mr-3 ${this.state.passwordCount >= 80 ? 'password-strength__strength' : ''}`}></div>
-                                <div id="fifth__level"
-                                     className={`password-strength__div mr-3 ${this.state.passwordCount == 100 ? 'password-strength__strength' : ''}`}></div>
+                            {this.state.passwordCount > 0 && <div style={{display: 'inline-flex'}} className="d-inline-flex">
+                                <div id="first__level" className={`password-strength__div mr-3 ${colors[this.state.passwordCount]}`}></div>
+                                <div id="second__level" className={`password-strength__div mr-3 ${this.state.passwordCount >= 40 ? colors[this.state.passwordCount] : ' '}`}></div>
+                                <div id="third__level" className={`password-strength__div mr-3 ${this.state.passwordCount >= 60 ? colors[this.state.passwordCount] : ''}`}></div>
+                                <div id="fourth__level" className={`password-strength__div mr-3 ${this.state.passwordCount >= 80 ? colors[this.state.passwordCount] : ''}`}></div>
+                                <div id="fifth__level" className={`password-strength__div mr-3 ${this.state.passwordCount == 100 ? colors[this.state.passwordCount] : ''}`}></div>
                             </div>}
 
 
@@ -228,7 +236,7 @@ class SignUpInput extends Component<any, any> {
                                 Verified.ng</p>
                         </div>
                         <Col sm={12}>
-                            <button id="signUp-button" className="btn btn-primary w-100">Continue</button>
+                            <button id="signUp-button" type="submit" className="btn btn-primary w-100">Continue</button>
                         </Col>
                     </Row>
                 </form>
