@@ -45,6 +45,34 @@ export class ValidationUtil {
         }
     }
 
+    static validatePassword(password: string) {
+
+        let passCount = 0;
+
+        if(password.length >= 8) {
+            passCount += 20;
+        }
+
+        if(password.match(/[a-z]/)) {
+            passCount += 20
+        }
+
+        if(password.match(/[A-Z]/)) {
+            passCount += 20
+        }
+
+        if(password.match(/\d+/)) {
+            passCount += 20
+        }
+
+        if(password.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/)) {
+            passCount += 20
+        }
+
+        return passCount;
+
+    }
+
 }
 
 export default ValidationUtil
