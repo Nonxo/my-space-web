@@ -4,24 +4,35 @@ import {TextField} from "@material-ui/core";
 import Checkbox from "@material-ui/core/Checkbox";
 import ValidationUtil from "../utilities/validation-util";
 
-class SignUpInput extends Component{
 
-    state = {
-        text: '',
-        companyName: '',
-        email: '',
-        firstName: '',
-        lastName: '',
-        password: '',
-        phoneNumber: '',
-        firstNameError: null,
-        lastNameError: null,
-        emailError: false,
-        phoneNumberError: null,
-        companyNameError: null,
-        passwordError: null,
-        passwordCount: 0
+class SignUpInput extends Component<any, any> {
+
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            text: '',
+            companyName: '',
+            email: '',
+            firstName: '',
+            lastName: '',
+            password: '',
+            phoneNumber: '',
+            firstNameError: null,
+            lastNameError: null,
+            emailError: false,
+            phoneNumberError: null,
+            companyNameError: null,
+            passwordError: null,
+            passwordCount: 0,
+            passwordVisibility: false
+        };
+    }
+
+    togglePassword = () => {
+        this.setState({passwordVisibility: !this.state.passwordVisibility});
     };
+
 
     onSubmit = (e: any) => {
         e.preventDefault();
@@ -168,34 +179,43 @@ class SignUpInput extends Component{
                         </Col>
 
                         <Col md={12}>
-                            <TextField
-                                id="password"
-                                label="Password"
-                                margin="normal"
-                                type="password"
-                                variant="outlined"
-                                className="w-100"
-                                name="password"
-                                onChange={e => (
-                                    this.onChange(e)
-                                )}
-                            />
+                            <div className="position-relative">
+                                <TextField
+                                    id="password"
+                                    label="Password"
+                                    margin="normal"
+                                    type={`${this.state.passwordVisibility ? 'text' : 'password'}`}
+                                    variant="outlined"
+                                    className="w-100"
+                                    name="password"
+                                    onChange={e => (
+                                        this.onChange(e)
+                                    )}
+                                />
+                                <i onClick={this.togglePassword}
+                                   className={`passwordIcon fa fa-${this.state.passwordVisibility ? 'eye' : 'eye-slash'}`}></i>
+                            </div>
 
-
-
-                                {this.state.passwordCount > 0 && <div style={{display: 'inline-flex'}} className="d-inline-flex">
-                                    <div id="first__level" className={`password-strength__div mr-3 ${this.state.passwordCount > 20 ? 'password-strength__strength' : 'password-strength__weak'}`}></div>
-                                    <div id="second__level" className={`password-strength__div mr-3 ${this.state.passwordCount >= 40 ? 'password-strength__strength' : ''}`}></div>
-                                    <div id="third__level" className={`password-strength__div mr-3 ${this.state.passwordCount >= 60 ? 'password-strength__strength': ''}`}></div>
-                                    <div id="fourth__level" className={`password-strength__div mr-3 ${this.state.passwordCount >= 80 ? 'password-strength__strength': ''}`}></div>
-                                    <div id="fifth__level" className={`password-strength__div mr-3 ${this.state.passwordCount == 100 ? 'password-strength__strength': ''}`}></div>
-                                </div>}
+                            {this.state.passwordCount > 0 &&
+                            <div style={{display: 'inline-flex'}} className="d-inline-flex">
+                                <div id="first__level"
+                                     className={`password-strength__div mr-3 ${this.state.passwordCount > 20 ? 'password-strength__strength' : 'password-strength__weak'}`}></div>
+                                <div id="second__level"
+                                     className={`password-strength__div mr-3 ${this.state.passwordCount >= 40 ? 'password-strength__strength' : ''}`}></div>
+                                <div id="third__level"
+                                     className={`password-strength__div mr-3 ${this.state.passwordCount >= 60 ? 'password-strength__strength' : ''}`}></div>
+                                <div id="fourth__level"
+                                     className={`password-strength__div mr-3 ${this.state.passwordCount >= 80 ? 'password-strength__strength' : ''}`}></div>
+                                <div id="fifth__level"
+                                     className={`password-strength__div mr-3 ${this.state.passwordCount == 100 ? 'password-strength__strength' : ''}`}></div>
+                            </div>}
 
 
                             {(this.state.password.length > 0 && this.state.password.length < 8) &&
                             <p id="password-error"
                                className="text-danger smaller-text font-weight-bold d-flex"><span
-                                className="arrow-up my-auto mr-1"></span>The password field must be at least 8 characters</p>}
+                                className="arrow-up my-auto mr-1"></span>The password field must be at least 8
+                                characters</p>}
 
                         </Col>
 
