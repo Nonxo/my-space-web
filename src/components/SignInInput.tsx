@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {Col, Row} from "react-bootstrap";
 import {TextField} from "@material-ui/core";
 import ValidationUtil from "../utilities/validation-util";
+import {Link} from "react-router-dom";
 
 export class SignInInput extends Component<any, any> {
     constructor(props: any) {
@@ -81,8 +82,10 @@ export class SignInInput extends Component<any, any> {
                         </Col>
 
                         <Col md={12}>
+                            <Link to="/forgot-password">
                             <p id="forgotPassword" className="green__text cursor font-weight-medium pt-3">Forgot
                                 password?</p>
+                            </Link>
                         </Col>
 
                         <Col md={12}>

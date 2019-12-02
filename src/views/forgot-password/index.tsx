@@ -2,8 +2,9 @@ import React from 'react';
 import {Col, Row} from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import logo from "../../assets/img/logo.svg";
-import googleLogo from "../../assets/img/google.svg";
 import ForgotPasswordInput from "../../components/ForgotPasswordInput";
+import {Link} from "react-router-dom";
+import forgotPasswordImage from '../../assets/img/forgot-password.svg';
 
 const ForgotPassword = () => {
     return (
@@ -16,18 +17,26 @@ const ForgotPassword = () => {
                         <div className="sign-up--header__padding-top">
                             <h4 id="sign-up-header" className="font-weight-bold sign--up__header">Forgot Password ?</h4>
                         </div>
+
+                        <Col md={12} className="mt-5 pt-5">
+                            <img src={forgotPasswordImage} className="img-fluid" alt="Sign In Image"
+                                 style={{maxWidth: '450px'}}/>
+                        </Col>
                     </div>
                 </Container>
             </Col>
             <Col md={8} className="py-4">
                 <Container className="h-100">
-                    <p className="text-secondary text-md-right text-center">Go back to <span
-                        id="signInText"
-                        className="green__text cursor font-weight-medium">Sign In</span></p>
+                    <p className="text-secondary text-md-right text-center">Go back to
+                        <Link to="/login">
+                        <span id="signInText"
+                              className="green__text cursor font-weight-medium pl-2">Sign In</span>
+                        </Link>
+                    </p>
 
                     <Col md={12} className="vertical-alignment">
                         <div className="sign-up__div mx-auto">
-                            <ForgotPasswordInput />
+                            <ForgotPasswordInput/>
                         </div>
                     </Col>
 
