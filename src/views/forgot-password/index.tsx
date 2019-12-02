@@ -26,7 +26,7 @@ const ForgotPassword = () => {
                         className="green__text cursor font-weight-medium">Sign In</span></p>
 
                     <Col md={12} className="vertical-alignment">
-                        <div className="sign-up__div mx-auto mt-5">
+                        <div className="sign-up__div mx-auto">
                             <ForgotPasswordInput />
                         </div>
                     </Col>
