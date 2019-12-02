@@ -33,7 +33,6 @@ export class SignInInput extends Component<any, any> {
 
     onSubmit = (e: any) => {
         e.preventDefault();
-        console.log(this.state);
     };
 
     render() {
