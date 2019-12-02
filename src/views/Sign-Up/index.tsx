@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Row, Col} from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import logo from '../../assets/img/logo.svg'
 import googleLogo from '../../assets/img/google.svg'
 import SignUpInput from "../../components/SignUpInput";
 
-class Index extends Component {
 
-    render() {
+
+const Index = () => {
         return (
             <Row className="mx-auto h100Vh">
                 <Col md={4} className="bg-green px-5 d-md-block d-none">
@@ -68,7 +68,6 @@ class Index extends Component {
                 </Col>
             </Row>
         )
-    }
-}
+};
 
 export default Index;
