@@ -29,7 +29,7 @@ const Index = () => {
                 </Container>
             </Col>
             <Col md={8} className="py-4">
-                <Container>
+                <Container className="h-100">
                     <p className="text-secondary text-md-right text-center">Already have an account?
                         <Link to="/login">
                             <span
@@ -38,42 +38,47 @@ const Index = () => {
                         </Link>
                     </p>
 
-                    <div className="sign-up__div mx-auto mt-5">
-                        <h4 id="signUp-text" className="sign-up__h4 font-weight-semi-bold pb-4">Create your verified
-                            account</h4>
-                        <button id="signUp-with-google" className="btn btn-google px-3"><img
-                            style={{maxWidth: '22px'}} className="float-left" src={googleLogo}
-                            alt="Google Logo"/> <span
-                            className="font-weight-semi-bold">Sign up with Google</span></button>
+                    <Col md={12} className="vertical-alignment">
+                        <div className="sign-up__div mx-auto">
+                            <h4 id="signUp-text" className="sign-up__h4 font-weight-semi-bold pb-4">Sign in to
+                                continue to your account.</h4>
+                            <button id="signUp-with-google" className="btn btn-google px-3"><img
+                                style={{maxWidth: '22px'}} className="float-left" src={googleLogo}
+                                alt="Google Logo"/> <span
+                                className="font-weight-semi-bold">Sign up with Google</span></button>
 
-                        <h6 style={{color: '#859BBCF5'}} className="h-line-between-words mt-4 mb-3">OR</h6>
+                            <h6 style={{color: '#859BBCF5'}} className="h-line-between-words mt-4 mb-3">OR</h6>
 
-                        <SignUpInput/>
-                    </div>
+                            <SignUpInput/>
+                        </div>
+                    </Col>
 
-                    <div className="sign-up__div mx-auto mt-5">
-                        <Row>
-                            <Col md={6}>
-                                <p className="text-secondary">All rights reserved © 2019 Verified</p>
-                            </Col>
+                    <Col md={12}>
+                        <div className="sign-up__div mx-auto">
+                            <Row>
+                                <Col md={6}>
+                                    <p className="text-secondary">All rights reserved © 2019 Verified</p>
+                                </Col>
 
-                            <Col md={6}>
-                                <Row>
-                                    <Col md={2}></Col>
-                                    <Col md={5}>
-                                        <div className="text-secondary d-inline-flex">
-                                            <p id="privacy">Privacy</p>
-                                            <p className="px-2">|</p>
-                                            <p id="terms">Terms</p>
-                                        </div>
-                                    </Col>
-                                    <Col md={5}>
-                                        <p id="langSelector" className="text-secondary text-md-right">English</p>
-                                    </Col>
-                                </Row>
-                            </Col>
-                        </Row>
-                    </div>
+                                <Col md={6}>
+                                    <Row>
+                                        <Col md={2}></Col>
+                                        <Col md={5}>
+                                            <div className="text-secondary d-inline-flex">
+                                                <p id="privacy">Privacy</p>
+                                                <p className="px-2">|</p>
+                                                <p id="terms">Terms</p>
+                                            </div>
+                                        </Col>
+                                        <Col md={5}>
+                                            <p id="langSelector"
+                                               className="text-secondary text-md-right">English</p>
+                                        </Col>
+                                    </Row>
+                                </Col>
+                            </Row>
+                        </div>
+                    </Col>
                 </Container>
             </Col>
         </Row>
