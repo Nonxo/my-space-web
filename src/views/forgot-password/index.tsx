@@ -3,10 +3,14 @@ import {Col, Row} from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import logo from "../../assets/img/logo.svg";
 import ForgotPasswordInput from "../../components/ForgotPasswordInput";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import forgotPasswordImage from '../../assets/img/forgot-password.svg';
 
 const ForgotPassword = () => {
+   const history = useHistory();
+   const routeToConfirmation = () => {
+       history.push("/reset-password-link");
+   };
     return (
         <Row className="mx-auto h100Vh">
             <Col md={4} className="bg-green px-5 d-md-block d-none">
@@ -36,7 +40,7 @@ const ForgotPassword = () => {
 
                     <Col md={12} className="vertical-alignment">
                         <div className="sign-up__div mx-auto">
-                            <ForgotPasswordInput/>
+                            <ForgotPasswordInput routeToConfirmation={routeToConfirmation}/>
                         </div>
                     </Col>
 

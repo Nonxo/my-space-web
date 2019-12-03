@@ -5,8 +5,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './i18next';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter} from "react-router-dom";
 
-ReactDOM.render(<Suspense fallback={(<div>Loading ~~~</div>)}><App /></Suspense>, document.getElementById('root'));
+ReactDOM.render(
+    <BrowserRouter>
+    <Suspense fallback={(<div>Loading ~~~</div>)}><App /></Suspense>
+    </BrowserRouter>
+    , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

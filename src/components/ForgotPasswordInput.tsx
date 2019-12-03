@@ -10,7 +10,7 @@ export class ForgotPasswordInput extends Component<any, any> {
         this.state = {
             email: '',
             emailError: false,
-        }
+        };
     };
 
     componentDidMount(): void {
@@ -27,6 +27,7 @@ export class ForgotPasswordInput extends Component<any, any> {
 
     onSubmit = (e: any) => {
         e.preventDefault();
+        this.props.routeToConfirmation()
     };
 
     render() {
