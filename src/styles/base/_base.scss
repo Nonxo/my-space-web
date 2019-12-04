@@ -1,6 +1,15 @@
 body {
   font-family: 'poppins', sans-serif;
 }
+#content-wrapper {
+  background-color: #F2F7FA;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#content {
+  flex: 1 0 auto;
+}
 
 .cursor {
   cursor: pointer;
